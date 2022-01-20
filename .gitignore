@@ -1,0 +1,11 @@
+# Created by Alessandro Varesi
+
+### Python ###
+
+# Sphinx documentation
+docs/_build/
+
+# Environments
+env/
+
+# EOF #
