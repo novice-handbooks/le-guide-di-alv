@@ -17,8 +17,14 @@ Una delle prime guide sarà proprio quella relativa alla pubblicazione di docume
 proprio come quella che stai leggendo in questo momento.
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Sommario
+
+.. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Come fare a ...:
+
+   rtd-howto/index
 
 Indici e tabelle
 ================
