@@ -12,3 +12,9 @@ Esistono due versioni distinte di servizio:
 `readthedocs.com <http://readthedocs.com>`_
     versione premium del servizio, dedicato principalmente ad aziende o corporazioni che necessitano
     di poter pubblicare in forma ristretta la propria documentazione
+
+Ovviamente per questa guida useremo la versione gratuita più che sufficiente per i
+nostri scopi.
+
+Prossimamente su questi schermi...
+----------------------------------
