@@ -1,18 +1,22 @@
 Getting started
 ---------------
 
-The easiest way to start building a SvelteKit app is to run npm create:
+Come per praticamente tutti i programmi basati su framework, il modo più
+semplice per iniziare è quello di partire da un progetto base di esempio.
 
-::
+A questo scopo gli sviluppatori di `SvelteKit` hanno predisposto un comando
+dedicato per la creazione della struttura di programma da cui partire:
 
-  npm create svelte my-app
-  cd my-app
+.. code-block:: shell
+  :emphasize-lines: 1
+
+  npm create svelte my-bookshelf
+  cd my-bookshelf
   npm install
   npm run dev
 
-The first command will scaffold a new project in the my-app directory asking you if you'd like to set up some basic tooling such as TypeScript. See the FAQ for pointers on setting up additional tooling. The subsequent commands will then install its dependencies and start a server on localhost:3000.
-
-There are two basic concepts:
-
-Each page of your app is a Svelte component
-You create pages by adding files to the src/routes directory of your project. These will be server-rendered so that a user's first visit to your app is as fast as possible, then a client-side app takes over
+Il primo comando crea il vero e proprio progetto di esempio nella cartella
+*my-bookshelf*. Nel farlo richiede alcune informazioni di configurazione
+del progetto, come ad esempio l'utilizzo o meno di Typescript come
+linguaggio di programmazione.
+Noi procediamo con l'utilizzo di Javascript puro tralasciando Typescript.
