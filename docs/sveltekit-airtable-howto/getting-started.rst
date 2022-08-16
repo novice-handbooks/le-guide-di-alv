@@ -1,9 +1,13 @@
-Getting started
----------------
+--------
+Iniziamo
+--------
 
 Come per praticamente tutti i programmi basati su framework, il modo più
 semplice per iniziare è quello di partire da un progetto base di esempio.
 
+
+Creiamo il codice di esempio
+----------------------------
 A questo scopo gli sviluppatori di `SvelteKit` hanno predisposto un comando
 dedicato per la creazione della struttura di programma da cui partire:
 
@@ -20,3 +24,13 @@ Il primo comando crea il vero e proprio progetto di esempio nella cartella
 del progetto, come ad esempio l'utilizzo o meno di Typescript come
 linguaggio di programmazione.
 Noi procediamo con l'utilizzo di Javascript puro tralasciando Typescript.
+
+I comandi successivi installano le dipendenze necessarie per il
+funzionamento del progetto e lo avviano in modalità di sviluppo.
+
+In particolare l'ultimo comando : ``npm run dev`` avvia il server di
+sviluppo e rende disponibile l'applicazione web su
+`localhost:3000 <http://127.0.0.1:3000>`_.
+
+Analizziamo il progetto
+-----------------------
