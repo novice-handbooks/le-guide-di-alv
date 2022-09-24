@@ -47,4 +47,7 @@ In particolare mi sento di consigliare
 `Visual Studio Code <https://code.visualstudio.com>`_
 che, grazie alle funzionalità integrate ed alla vasta disponibilità
 di estensioni dedicate, facilita enormemente la scrittura e la correzione
-del codice.
+del codice. Tra le estensioni, ovviamente , consiglio di installare
+`Svelte for VS Code <https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode>`_
+
+
