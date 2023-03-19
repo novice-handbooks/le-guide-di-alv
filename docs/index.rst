@@ -22,10 +22,11 @@ documentazione proprio come quella che stai leggendo in questo momento.
    :caption: Sommario
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Come fare a ...:
 
    rtd-howto/index
+   sveltekit-airtable-howto/index
 
 Indici e tabelle
 ================
