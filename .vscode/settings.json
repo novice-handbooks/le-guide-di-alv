@@ -1,5 +1,7 @@
 {
-    "esbonio.sphinx.buildDir" : "${workspaceFolder}/docs/_build/html",
-    "esbonio.sphinx.confDir"  : "${workspaceFolder}/docs",
-    "esbonio.sphinx.srcDir"   : "${workspaceFolder}/docs"
+    "esbonio.sphinx.buildDir": "${workspaceFolder}/docs/_build/html",
+    "esbonio.sphinx.confDir": "${workspaceFolder}/pyenv/lib/python3.9/site-packages/pbr/tests/testpackage/doc/source",
+    "esbonio.sphinx.srcDir": "${workspaceFolder}/docs",
+    "restructuredtext.preview.docutils.disabled": false,
+    "esbonio.server.showOutputOnError": true
 }
