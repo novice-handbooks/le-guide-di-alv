@@ -1,5 +1,5 @@
-Sveltekit e Airtable per la nostra applicazione web
-===================================================
+Sveltekit e Airtable per la nostra applicazione web [WIP]
+=========================================================
 
 Proviamo a creare assieme una applicazione web completa, in
 gergo definita "full-stack", per la gestione dei libri della
