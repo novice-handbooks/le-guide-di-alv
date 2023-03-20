@@ -4,6 +4,17 @@ Le guide di Alv
 .. meta::
    :description lang=it: Raccolta di guide e tutorial su informatica e programmazione.
 
+.. La voce seguente è stata inserita perche durante la conversione
+   in PDF la prima voce viene utilizzata come intestazione per l'indice
+.. toctree::
+   :hidden:
+   :caption: INDICE
+
+.. La seconda voce potrebbe essere usata come footer nel blocco che
+   precede i capitoli
+
+.. toctree::
+   :caption: Prefazione
 
 Benvenuto nella raccolta delle mie guide personali.
 Dopo anni si programmazione, studio e divertimento ho deciso di raccogliere
@@ -16,18 +27,6 @@ di applicazioni web, programmazione.
 Una delle prime guide sarà proprio quella relativa alla pubblicazione di
 documentazione proprio come quella che stai leggendo in questo momento.
 
-.. La voce seguente è stata inserita perche durante la conversione
-   in PDF la prima voce viene utilizzata come intestazione per l'indice
-.. toctree::
-   :hidden:
-   :caption: INDEX
-
-.. La seconda voce potrebbe essere usata come footer nel blocco che
-   precede i capitoli
-
-.. toctree::
-   :hidden:
-   :caption: Prefazione
 
 .. toctree::
    :maxdepth: 2
