@@ -41,8 +41,8 @@ documentazione proprio come quella che stai leggendo in questo momento.
    :hidden:
    :caption: 👨‍💻 I linguaggi
 
-   /language/javascript
-   /language/python
+   /language/javascript/index
+   /language/python/index
 
 .. toctree::
    :maxdepth: 2
