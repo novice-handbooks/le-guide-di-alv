@@ -34,6 +34,14 @@ TYPO3_ - reStructuredText and Sphinx
 Licenza
 -------
 
-`MIT`_ © 2022 Alessandro Varesi
+|license| 
 
-.. _MIT: LICENSE
+
+This work is licensed under a `Creative Commons Attribution-ShareAlike 4.0 International License <http://creativecommons.org/licenses/by-sa/4.0/>`_
+
+© 2022 Alessandro Varesi
+
+.. _CC-BY-SA-4.0: LICENSE
+.. |license| image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+    :alt: Creative Commons License
+    :target: http://creativecommons.org/licenses/by-sa/4.0/
