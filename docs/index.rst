@@ -1,10 +1,20 @@
-.. Le guide di Alv documentation master file, created by
-   sphinx-quickstart on Thu Jan 20 22:03:28 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Le guide di Alv
 ===============
+
+.. meta::
+   :description lang=it: Raccolta di guide e tutorial su informatica e programmazione.
+
+.. La voce seguente è stata inserita perche durante la conversione
+   in PDF la prima voce viene utilizzata come intestazione per l'indice
+.. toctree::
+   :hidden:
+   :caption: INDICE
+
+.. La seconda voce potrebbe essere usata come footer nel blocco che
+   precede i capitoli
+
+.. toctree::
+   :caption: Prefazione
 
 Benvenuto nella raccolta delle mie guide personali.
 Dopo anni si programmazione, studio e divertimento ho deciso di raccogliere
@@ -17,19 +27,28 @@ di applicazioni web, programmazione.
 Una delle prime guide sarà proprio quella relativa alla pubblicazione di
 documentazione proprio come quella che stai leggendo in questo momento.
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Sommario
 
 .. toctree::
    :maxdepth: 2
-   :caption: Come fare a ...:
+   :hidden:
+   :caption: 💻 Le Basi
 
-   rtd-howto/index
+   /basic/html
+   /basic/css
 
-Indici e tabelle
-================
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: 👨‍💻 I linguaggi
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   /language/javascript/index
+   /language/python/index
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: 🚀 Tutorials
+
+   /tutorial/sveltekit-airtable-howto/index
+   /tutorial/django-website/index
+   /rtd-howto/index

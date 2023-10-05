@@ -3,3 +3,7 @@
 sphinx==5.0.2
 sphinx_rtd_theme==1.0.0
 myst-parser==0.18.0
+sphinx-book-theme
+esbonio
+doc8
+

@@ -6,6 +6,6 @@
 docs/_build/
 
 # Environments
-env/
+pyenv/
 
 # EOF #
