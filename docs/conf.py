@@ -19,7 +19,7 @@ import sphinx_book_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Le guide di Alv'
-copyright = '2022, Alessandro Varesi'
+copyright = '2023, Alessandro Varesi'
 author = 'Alessandro Varesi'
 
 
