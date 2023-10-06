@@ -1,8 +1,11 @@
-argparse
-========
+argparse - Parser per opzioni da linea di comando, argomenti e sottocomandi.
+============================================================================
 
 .. note::
   Link alla documentazione ufficiale: https://docs.python.org/3/library/argparse.html
+
+Introduzione alla libreria
+--------------------------
 
 La libreria `argparse` in Python è utilizzata per analizzare gli argomenti
 della riga di comando passati a uno script Python. Essa semplifica la
@@ -38,31 +41,87 @@ Ecco alcune delle principali funzionalità e scopi di `argparse`:
     argomenti specificati, facilitando la creazione di una guida
     utente per il tuo script.
 
-Ecco un esempio semplice di come usare `argparse`:
+Concetti base
+-------------
+
+Di seguito vengono spiegate con piccoli esempi applicativi le funzionalità
+che la libreria mette a disposizione del programmatore.
+
+Partiamo con l'esempio più semplice di utilizzo di `argparse`. In questo
+non richiediamo alcuna funzione specifica, ma come vedremo, la libreria
+implementa automaticamente alcune funzionalità basilari.
 
 .. code-block:: python
-  :emphasize-lines: 0
+    :caption: prog.py
 
-  import argparse
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.parse_args()
 
-  parser = argparse.ArgumentParser(description='Esempio di utilizzo di argparse')
+Tre righe di codice: la prima per importare la libreria, con la seconda
+si instanzia un oggetto di classe  `ArgumentParser`, che mette a disposizione
+il metodo :code:`parse_args()` richiamato nella terza riga.
 
-  # Definizione di un argomento obbligatorio
-  parser.add_argument('arg1', type=int, help='Un argomento obbligatorio di tipo intero')
+Quindi alla fine questa semplice chiamata cosa fa?
 
-  # Definizione di un argomento opzionale
-  parser.add_argument('--opzionale', type=str, help='Un argomento opzionale di tipo stringa')
+Eseguimo il programma usando alcune combinazioni di parametri:
 
-  # Parsificazione degli argomenti
-  args = parser.parse_args()
+.. code-block:: shell
+    :caption: assenza di parametri
 
-  # Accesso agli argomenti
-  print('Argomento obbligatorio:', args.arg1)
-  print('Argomento opzionale:', args.opzionale)
+    $ python prog.py
+
+Il programma esegue il *parsing* della linea di comando che non restituisce
+nulla.
+
+Ora proviamo a passare un argomento nella linea di comando:
+
+.. code-block:: shell
+    :caption: passando un argomento sconosciuto (foo)
+    :emphasize-lines: 2-
+
+    $ python prog.py foo
+    usage: prog.py [-h]
+    prog.py: error: unrecognized arguments: foo
+
+Ecco che entra in gioco il metodo :code:'parse_args()' e non essendo istruito
+a riconoscere alcun argomento ci presenta un messaggio di errore e termina
+il programma.
+
+Notare che il messaggio si compone di due parti:
+
+- una spiegazione di utilizzo del programma con la presenza di
+  una opzione :code:`-h`
+- il messaggio di errore specifico per il non riconoscimento dell'argomento
+  passato
+
+Ecco quindi un primo automatismo messo a disposizione da `argparse`.
+
+Ma abbiamo appena iniziato. Ora proviamo l'opzione :code:`-h`
+
+.. code-block:: shell
+    :caption: passando l'opzione -h
+    :emphasize-lines: 2-
+
+    $ python prog.py -h
+    usage: prog.py [-h]
+
+    options:
+      -h, --help  show this help message and exit
+
+Ecco, quindi in automatico `argparse` implementa la visualizzazione
+dell'help della linea di comando. Di seguito andremo a vedere come
+aggiungere informazioni, ma ora facciamo un ultimo esperimento e
+proviamo a utilizzare una opzione sconosciuta
+
+.. code-block:: shell
+    :caption: passando un'opzione sconosciuta (--baz)
+    :emphasize-lines: 2-
+
+    $ python prog.py --baz
+    usage: prog.py [-h]
+    prog.py: error: unrecognized arguments: --baz
+
+A questo punto c'era da aspettarselo, un bel messaggio di errore.
 
 
-In questo esempio, `argparse` viene utilizzato per definire un argomento
-obbligatorio di tipo intero (`arg1`) e un argomento opzionale di tipo
-stringa (`opzionale`).
-Gli utenti possono passare questi argomenti dalla riga di comando quando
-eseguono lo script.
