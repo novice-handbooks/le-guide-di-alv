@@ -1,21 +1,30 @@
 Le guide di Alv
 ===============
 
-|docs| 
+|docs|
 
 Scopo
 -----
 
 `Le guide di Alv`_ rappresenta una raccolta di guide di varia utilità che sono
-rilasciate alla comunità open source. Sono principalmente scritte in 
+rilasciate alla comunità open source. Sono principalmente scritte in
 reStructuredText_ e compilate come documenti navigabili tramite Sphinx_.
 
 Sono ospitate su `Read The Docs`_.
+
+Risorse utili
+-------------
+
+Alcune risorse utili per ulteriori approfondimenti:
+
+TYPO3_ - reStructuredText and Sphinx
 
 .. _Le guide di Alv: https://le-guide-di-alv.readthedocs.io/
 .. _reStructuredText: http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 .. _Sphinx: http://www.sphinx-doc.org/
 .. _Read the docs: https://readthedocs.org/
+.. _TYPO3: https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Index.html
+
 
 .. |docs| image:: https://readthedocs.org/projects/le-guide-di-alv/badge/?version=latest&style=plastic
     :alt: Documentation Status
@@ -25,6 +34,14 @@ Sono ospitate su `Read The Docs`_.
 Licenza
 -------
 
-`MIT`_ © 2022 Alessandro Varesi
+|license| 
 
-.. _MIT: LICENSE
+
+This work is licensed under a `Creative Commons Attribution-ShareAlike 4.0 International License <http://creativecommons.org/licenses/by-sa/4.0/>`_
+
+© 2022 Alessandro Varesi
+
+.. _CC-BY-SA-4.0: LICENSE
+.. |license| image:: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+    :alt: Creative Commons License
+    :target: http://creativecommons.org/licenses/by-sa/4.0/
