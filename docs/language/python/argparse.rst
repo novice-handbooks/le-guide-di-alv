@@ -2,7 +2,10 @@ argparse - Parser per opzioni da linea di comando, argomenti e sottocomandi.
 ============================================================================
 
 .. note::
-  Link alla documentazione ufficiale: https://docs.python.org/3/library/argparse.html
+  I contenuti che seguono prendono forte ispirazione dalla documentazione
+  ufficiale relativa della versione 3.11 di Python
+
+  Link alla documentazione ufficiale: https://docs.python.org/3.11/library/argparse.html
 
 Introduzione alla libreria
 --------------------------
@@ -53,6 +56,7 @@ implementa automaticamente alcune funzionalità basilari.
 
 .. code-block:: python
     :caption: prog.py
+    :linenos:
 
     import argparse
     parser = argparse.ArgumentParser()
@@ -67,7 +71,7 @@ Quindi alla fine questa semplice chiamata cosa fa?
 Eseguimo il programma usando alcune combinazioni di parametri:
 
 .. code-block:: shell
-    :caption: assenza di parametri
+    :caption: assenza di argomenti
 
     $ python prog.py
 
@@ -84,7 +88,7 @@ Ora proviamo a passare un argomento nella linea di comando:
     usage: prog.py [-h]
     prog.py: error: unrecognized arguments: foo
 
-Ecco che entra in gioco il metodo :code:'parse_args()' e non essendo istruito
+Ecco che entra in gioco il metodo :code:`parse_args()` e non essendo istruito
 a riconoscere alcun argomento ci presenta un messaggio di errore e termina
 il programma.
 
@@ -109,7 +113,7 @@ Ma abbiamo appena iniziato. Ora proviamo l'opzione :code:`-h`
     options:
       -h, --help  show this help message and exit
 
-Ecco, quindi in automatico `argparse` implementa la visualizzazione
+In automatico `argparse` implementa la visualizzazione
 dell'help della linea di comando. Di seguito andremo a vedere come
 aggiungere informazioni, ma ora facciamo un ultimo esperimento e
 proviamo a utilizzare una opzione sconosciuta
@@ -124,4 +128,83 @@ proviamo a utilizzare una opzione sconosciuta
 
 A questo punto c'era da aspettarselo, un bel messaggio di errore.
 
+Con questi esempi abbiamo visto il comportamento della libreria in
+assenza di una configurazione specifica. Ma noi vogliato sfruttare
+la libreria per implementare la gestione di specifici argomenti della
+linea di comando.
+
+Argomenti posizionali
+---------------------
+
+Partendo dall'esempio precedente iniziamo ad aggiungere la gestione di
+un nuovo argomento
+
+.. code-block:: python
+    :caption: prog.py
+    :linenos:
+    :emphasize-lines: 3-
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("message")
+    args = parser.parse_args()
+    # di seguito le funzioni dell'applicazione
+    print(args.message)
+
+Come evidenziato nel codice abbiamo aggiunto:
+
+- chiamata la metodo :code:`add_argument()` con cui aggiungiamo la
+  gestione del nuovo argomento `message`
+- il risultato del metodo `parse_args()` viene memorizzato localmente
+  con nome `args`
+- linee della nostra, che in questo caso si limita a stampare
+  a console il parametro `message` ricevuto
+
+Abbiamo istruito `argparse` che la nostra applicazione **si aspetta**
+di ricevere l'argomento `message` sulla linea di comando.
+
+Proviamo come prima a lanciare la nostra app in tre condizioni: senza
+argomenti, con l'argomento corretto, con l'opzione :code:`-h` per
+visualizzare l'help.
+
+.. code-block:: shell
+    :caption: test con varie condizioni
+    :emphasize-lines: 2-3, 5, 7-
+
+    $ python prog.py
+    usage: prog.py [-h] message
+    prog.py: error: the following arguments are required: message
+    $ python prog.py "Questo è il mio messaggio"
+    Questo è il mio messaggio
+    $ python prog.py -h
+    usage: prog.py [-h] message
+
+    positional arguments:
+    message
+
+    options:
+      -h, --help  show this help message and exit
+
+Nel primo caso il codice si interrompe con chiamata al metodo
+:code:`parse_args()`, se righe che seguono non sono eseguite.
+
+Utilizziamo l'applicazione come è stata pensata, e cioè passando correttamente
+l'argomento, il codice prosegue e i valori passati come argomenti sono
+restituiti dal metodo :code:`parse_args()`.
+
+La visualizzazione dell'help relativamente al parametro `message` non fornisce
+informazioni particolari. Nel codice seguente vediamo come aggiungere
+queste informazioni.
+
+.. code-block:: python
+    :caption: prog.py
+    :linenos:
+    :emphasize-lines: 3
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("message", help="messaggio da stampare")
+    args = parser.parse_args()
+    # di seguito le funzioni dell'applicazione
+    print(args.message)
 
