@@ -1,5 +1,5 @@
-argparse - Parser per opzioni da linea di comando, argomenti e sottocomandi.
-============================================================================
+argparse - Parser della linea di comando
+========================================
 
 .. note::
   I contenuti che seguono prendono forte ispirazione dalla documentazione

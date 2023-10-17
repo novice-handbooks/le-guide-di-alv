@@ -15,10 +15,29 @@ Python - Un linguaggio per mille usi
   È quindi possibile che le informazioni non siano inizialmente fruibili
   da una platea senza conoscenza pregressa.
 
+Guida alla sopravvivenza
+------------------------
+
+Hai imparato le basi del linguaggio? Bene!
+Ma il solo linguaggio non basta. Di seguito una serie di informazioni e di
+consigli utili per non perdersi e complicarsi la vita nella creazione del
+proprio programma.
+
 .. toctree::
   :maxdepth: 1
-  :caption: The Python Standard Library
 
-  argparse - Parser della linea di comando <argparse>
+  venv_pyenv_poetry
 
+
+
+The Python Standard Library
+---------------------------
+
+Alla scoperta delle migliori funzionalità già disponibili con l'installazione
+di `Python`
+
+.. toctree::
+  :maxdepth: 1
+
+  argparse
 
