@@ -136,32 +136,40 @@ linea di comando.
 Argomenti posizionali
 ---------------------
 
-Partendo dall'esempio precedente iniziamo ad aggiungere la gestione di
-un nuovo argomento
+Siamo studiando `argparse` quindi è molto probabile che abbiamo la necessità
+di gestire uno o più argomenti nella linea di comando.
+
+Supponiamo di voler sviluppare un'applicazione che calcola il quadrato
+del numero passato come argomento.
+
+Partendo dall'esempio precedente, creiamo un nuovo programma `square.py`
+in cui aggiungiamo la gestione del nuovo argomento:
 
 .. code-block:: python
-    :caption: prog.py
+    :caption: square.py
     :linenos:
     :emphasize-lines: 3-
 
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("message")
+    parser.add_argument("number")
     args = parser.parse_args()
     # di seguito le funzioni dell'applicazione
-    print(args.message)
+    print(int(args.number)**2)
 
 Come evidenziato nel codice abbiamo aggiunto:
 
 - chiamata la metodo :code:`add_argument()` con cui aggiungiamo la
-  gestione del nuovo argomento `message`
+  gestione del nuovo argomento `number`
 - il risultato del metodo `parse_args()` viene memorizzato localmente
   con nome `args`
-- linee della nostra, che in questo caso si limita a stampare
-  a console il parametro `message` ricevuto
+- il codice specifico della nostra applicazione, che in questo caso si
+  stampa il quadrato del valore passato come argomento `number`.
+  Nota che **l'argomento è una stringa** e quindi è convertito in
+  in *intero* prima di eseguire l'operazione.
 
 Abbiamo istruito `argparse` che la nostra applicazione **si aspetta**
-di ricevere l'argomento `message` sulla linea di comando.
+di ricevere l'argomento `number` sulla linea di comando.
 
 Proviamo come prima a lanciare la nostra app in tre condizioni: senza
 argomenti, con l'argomento corretto, con l'opzione :code:`-h` per
@@ -171,40 +179,46 @@ visualizzare l'help.
     :caption: test con varie condizioni
     :emphasize-lines: 2-3, 5, 7-
 
-    $ python prog.py
-    usage: prog.py [-h] message
-    prog.py: error: the following arguments are required: message
-    $ python prog.py "Questo è il mio messaggio"
-    Questo è il mio messaggio
-    $ python prog.py -h
-    usage: prog.py [-h] message
+    $ python square.py
+    usage: square.py [-h] number
+    prog.py: error: the following arguments are required: number
+    $ python square.py 25
+    625
+    $ python square.py -h
+    usage: square.py [-h] number
 
     positional arguments:
-    message
+    number
 
     options:
       -h, --help  show this help message and exit
 
 Nel primo caso il codice si interrompe con chiamata al metodo
-:code:`parse_args()`, se righe che seguono non sono eseguite.
+:code:`parse_args()`, il codice che segue non è eseguito.
 
-Utilizziamo l'applicazione come è stata pensata, e cioè passando correttamente
-l'argomento, il codice prosegue e i valori passati come argomenti sono
-restituiti dal metodo :code:`parse_args()`.
+Passando correttamente l'argomento (nel nostro esempio `32`), il codice
+prosegue e i valori passati come argomenti sono restituiti dal metodo
+:code:`parse_args()`. Il programma stampa il risultato corretto.
 
-La visualizzazione dell'help relativamente al parametro `message` non fornisce
-informazioni particolari. Nel codice seguente vediamo come aggiungere
-queste informazioni.
+Chiamando il programma con l'opzione :code:`-h` notiamo come il messaggio
+di help relativo al parametro `number` non fornisce non presenta nessuna
+informazione particolare.
+
+Ovviamente possiamo fornire tali informazioni. Il metodo
+:code:`add_argument` permette di aggiungere sia un messaggio di
+help che indicare la tipologia di parametro. Nel nostro caso indichiamo
+di necessitare un numero `intero`.
 
 .. code-block:: python
-    :caption: prog.py
+    :caption: square.py
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 3-4, 7
 
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("message", help="messaggio da stampare")
+    parser.add_argument("number", help="number to be squared",
+                        type=int)
     args = parser.parse_args()
     # di seguito le funzioni dell'applicazione
-    print(args.message)
+    print(args.number**2)
 
