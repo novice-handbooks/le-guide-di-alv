@@ -4,6 +4,10 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+# -- pylint setup ------------------------------------------------------------
+# pylint: skip-file
+
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -13,13 +17,14 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+
 import sphinx_rtd_theme
 import sphinx_book_theme
 
 # -- Project information -----------------------------------------------------
 
 project = 'Le guide di Alv'
-copyright = '2022, Alessandro Varesi'
+copyright = '2023, Alessandro Varesi'
 author = 'Alessandro Varesi'
 
 
