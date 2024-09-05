@@ -129,7 +129,7 @@ proviamo a utilizzare una opzione sconosciuta
 A questo punto c'era da aspettarselo, un bel messaggio di errore.
 
 Con questi esempi abbiamo visto il comportamento della libreria in
-assenza di una configurazione specifica. Ma noi vogliato sfruttare
+assenza di una configurazione specifica. Ma noi vogliamo sfruttare
 la libreria per implementare la gestione di specifici argomenti della
 linea di comando.
 
