@@ -129,7 +129,7 @@ proviamo a utilizzare una opzione sconosciuta
 A questo punto c'era da aspettarselo, un bel messaggio di errore.
 
 Con questi esempi abbiamo visto il comportamento della libreria in
-assenza di una configurazione specifica. Ma noi vogliato sfruttare
+assenza di una configurazione specifica. Ma noi vogliamo sfruttare
 la libreria per implementare la gestione di specifici argomenti della
 linea di comando.
 
@@ -159,14 +159,14 @@ in cui aggiungiamo la gestione del nuovo argomento:
 
 Come evidenziato nel codice abbiamo aggiunto:
 
-- chiamata la metodo :code:`add_argument()` con cui aggiungiamo la
+- chiamata al metodo :code:`add_argument()` con cui aggiungiamo la
   gestione del nuovo argomento `number`
 - il risultato del metodo `parse_args()` viene memorizzato localmente
   con nome `args`
-- il codice specifico della nostra applicazione, che in questo caso si
+- il codice specifico della nostra applicazione che
   stampa il quadrato del valore passato come argomento `number`.
   Nota che **l'argomento è una stringa** e quindi è convertito in
-  in *intero* prima di eseguire l'operazione.
+  un *intero* prima di eseguire l'operazione.
 
 Abbiamo istruito `argparse` che la nostra applicazione **si aspetta**
 di ricevere l'argomento `number` sulla linea di comando.
@@ -201,13 +201,13 @@ prosegue e i valori passati come argomenti sono restituiti dal metodo
 :code:`parse_args()`. Il programma stampa il risultato corretto.
 
 Chiamando il programma con l'opzione :code:`-h` notiamo come il messaggio
-di help relativo al parametro `number` non fornisce non presenta nessuna
+di help relativo al parametro `number` non fornisce nessuna
 informazione particolare.
 
 Ovviamente possiamo fornire tali informazioni. Il metodo
 :code:`add_argument` permette di aggiungere sia un messaggio di
 help che indicare la tipologia di parametro. Nel nostro caso indichiamo
-di necessitare un numero `intero`.
+la necessità un numero `intero`.
 
 .. code-block:: python
     :caption: square.py
